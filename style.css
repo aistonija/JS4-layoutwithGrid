@@ -21,7 +21,6 @@ a {
 .container {
   margin: 0 auto;
   width: 80%;
-  /* background-color: lightcoral; */
 }
 
 /* ============================ */
@@ -43,20 +42,6 @@ a {
   z-index: 0;
 }
 
-.content {
-  position: relative;
-  padding: 30px 0;
-  display: grid;
-  grid-template-areas:
-    "bg-hero"
-    "title"
-    "bg-servers"
-    "bg-laptop"
-    "text-description";
-  grid-template-columns: 1fr;
-  grid-template-rows: 400px 250px repeat(2, 400px) auto;
-}
-
 /* ============================ */
 /* header */
 /* ============================ */
@@ -66,7 +51,6 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  grid-area: header;
 }
 
 .logo > span {
@@ -81,6 +65,10 @@ header {
 .menu > a {
   color: white;
   font-size: 1.5rem;
+}
+
+.menu > a:hover {
+  color: gray;
 }
 
 .socials {
@@ -98,6 +86,20 @@ header {
 /* main content */
 /* ============================ */
 
+.content {
+  position: relative;
+  padding: 30px 0;
+  display: grid;
+  grid-template-areas:
+    "bg-hero"
+    "title"
+    "bg-servers"
+    "bg-laptop"
+    "text-description";
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 250px repeat(2, 400px) auto;
+}
+
 .bg-common {
   background-size: cover;
   background-position: center;
@@ -105,13 +107,16 @@ header {
 
 .bg-hero {
   background-image: url(/img/robot-img.jpg);
+  grid-area: bg-hero;
 }
 
 .bg-servers {
   background-image: url(/img/bg-servers.jpg);
+  grid-area: bg-servers;
 }
 .bg-laptop {
   background-image: url(/img/bg-laptop.jpg);
+  grid-area: bg-laptop;
 }
 
 .title {
@@ -120,9 +125,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  grid-area: title;
 }
 
-.title > * {
+.title > *,
+.text-description p {
   margin: 0;
 }
 
@@ -169,7 +176,9 @@ a.btn:hover {
   font-style: italic;
   line-height: 1.5;
   padding: 20px;
+  grid-area: text-description;
 }
+
 /* ============================ */
 /* footer */
 /* ============================ */

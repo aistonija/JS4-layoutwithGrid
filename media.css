@@ -1,0 +1,79 @@
+/* ============================ */
+/* tablet */
+/* ============================ */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .electric {
+    top: 400px;
+  }
+
+  header {
+    grid-template-columns: 4fr 1fr 1fr;
+  }
+
+  header > .menu {
+    justify-self: end;
+  }
+
+  .content {
+    grid-template-areas:
+      "bg-hero bg-hero"
+      "bg-hero bg-hero"
+      "title bg-servers"
+      "bg-laptop text-description";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 400px);
+  }
+
+  .title {
+    justify-content: space-evenly;
+  }
+
+  footer {
+    padding: 30px 25%;
+  }
+}
+
+/* ============================ */
+/* laptop */
+/* ============================ */
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 920px;
+  }
+
+  header {
+    grid-template-columns: 6fr 1fr 1fr;
+  }
+
+  .content {
+    grid-template-areas:
+      "bg-hero bg-hero title bg-servers"
+      "bg-hero bg-hero bg-laptop text-description";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  .main-heading {
+    font-size: 1.5em;
+  }
+
+  .text-description {
+    font-size: 1em;
+  }
+}
+
+/* ============================ */
+/* desktop */
+/* ============================ */
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
